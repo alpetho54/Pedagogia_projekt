@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autó Szimuláció V2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Egyenes vonalú mozgás szimulációja</h1>
+        
+        <div class="workspace">
+            <div class="left-panel">
+                <div class="canvas-container">
+                    <canvas id="simCanvas" width="500" height="200"></canvas>
+                </div>
+
+                <div class="friction-control">
+                    <label for="surlodasRange">Súrlódás: <span id="surlodasVal">0.01</span></label>
+                    <input type="range" id="surlodasRange" min="0" max="0.005" step="0.001" value="0.001">
+                </div>
+
+                <div class="info-panel">
+                    <p>Sebesség (v): <span id="speedTxt">0</span> m/s (<span id="speedTxtkm">0</span> km/óra)</p>
+                    <p>Megtett út (d): <span id="distanceTxt">0</span> m</p>
+                    <p>Idő (t): <span id="timeTxt">0.0</span> s</p>
+                </div>
+
+                <div class="controls">
+                    <button id="gazGomb" class="btn gaz">GÁZ</button>
+                    <button id="fekGomb" class="btn fek">FÉK</button>
+                    <button id="resetGomb" class="btn reset">Alaphelyzet</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="canvas-container">
+                    <h3>Út - Idő grafikon (d-t)</h3>
+                    <canvas id="sGraphCanvas" width="400" height="200"></canvas>
+                </div>
+                
+                <div class="canvas-container">
+                    <h3>Sebesség - Idő grafikon (v-t)</h3>
+                    <canvas id="vGraphCanvas" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
